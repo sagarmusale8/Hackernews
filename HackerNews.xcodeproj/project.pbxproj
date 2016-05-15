@@ -16,6 +16,9 @@
 		E715E87F1CE799EF009356D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E715E87D1CE799EF009356D1 /* LaunchScreen.storyboard */; };
 		E715E88A1CE799EF009356D1 /* HackerNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8891CE799EF009356D1 /* HackerNewsTests.swift */; };
 		E715E8951CE799EF009356D1 /* HackerNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */; };
+		E797AC9F1CE84999003F5E16 /* TopStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */; };
+		E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA21CE8A60F003F5E16 /* FontConstant.swift */; };
+		E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		E715E8901CE799EF009356D1 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsUITests.swift; sourceTree = "<group>"; };
 		E715E8961CE799EF009356D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoryTableViewCell.swift; sourceTree = "<group>"; };
+		E797ACA21CE8A60F003F5E16 /* FontConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConstant.swift; sourceTree = "<group>"; };
+		E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		E715E8701CE799EF009356D1 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				E797ACA11CE8A58D003F5E16 /* Constants */,
 				E715E8711CE799EF009356D1 /* AppDelegate.swift */,
 				E715E8731CE799EF009356D1 /* ViewController.swift */,
 				E715E8751CE799EF009356D1 /* Main.storyboard */,
@@ -130,6 +137,7 @@
 				E715E87D1CE799EF009356D1 /* LaunchScreen.storyboard */,
 				E715E8801CE799EF009356D1 /* Info.plist */,
 				E715E8781CE799EF009356D1 /* HackerNews.xcdatamodeld */,
+				E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */,
 			);
 			path = HackerNews;
 			sourceTree = "<group>";
@@ -150,6 +158,15 @@
 				E715E8961CE799EF009356D1 /* Info.plist */,
 			);
 			path = HackerNewsUITests;
+			sourceTree = "<group>";
+		};
+		E797ACA11CE8A58D003F5E16 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E797ACA21CE8A60F003F5E16 /* FontConstant.swift */,
+				E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,8 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E715E8741CE799EF009356D1 /* ViewController.swift in Sources */,
+				E797AC9F1CE84999003F5E16 /* TopStoryTableViewCell.swift in Sources */,
 				E715E87A1CE799EF009356D1 /* HackerNews.xcdatamodeld in Sources */,
 				E715E8721CE799EF009356D1 /* AppDelegate.swift in Sources */,
+				E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */,
+				E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
