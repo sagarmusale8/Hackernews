@@ -29,7 +29,11 @@ class TopStoryTableViewCell: UITableViewCell {
     
     // MARK: Setting up UI Components
     func setupUIProperties(){
-        
+        lblHeading.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_15)
+        lblDescription.setProperties(ColorConstant.SUBTITLE_GRAY, textFont: FontConstant.REGULAR_13)
+        lblTimeString.setProperties(ColorConstant.SUBTITLE_GRAY, textFont: FontConstant.REGULAR_13)
+        lblScore.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_13)
+        btnUrl.setProperties(ColorConstant.URL, textFont: FontConstant.REGULAR_13)
     }
 
 }

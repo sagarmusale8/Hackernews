@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		8C2C3C6B2570B2C586153C2D /* Pods_HackerNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0A392AD9303105CEAAA2 /* Pods_HackerNews.framework */; };
-		E715E8721CE799EF009356D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8711CE799EF009356D1 /* AppDelegate.swift */; };
-		E715E8741CE799EF009356D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8731CE799EF009356D1 /* ViewController.swift */; };
 		E715E8771CE799EF009356D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E715E8751CE799EF009356D1 /* Main.storyboard */; };
 		E715E87A1CE799EF009356D1 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E715E8781CE799EF009356D1 /* HackerNews.xcdatamodeld */; };
 		E715E87C1CE799EF009356D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E715E87B1CE799EF009356D1 /* Assets.xcassets */; };
 		E715E87F1CE799EF009356D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E715E87D1CE799EF009356D1 /* LaunchScreen.storyboard */; };
 		E715E88A1CE799EF009356D1 /* HackerNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8891CE799EF009356D1 /* HackerNewsTests.swift */; };
 		E715E8951CE799EF009356D1 /* HackerNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */; };
-		E797AC9F1CE84999003F5E16 /* TopStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */; };
 		E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA21CE8A60F003F5E16 /* FontConstant.swift */; };
 		E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */; };
+		E797ACAC1CE8AED9003F5E16 /* SourceCodePro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E797ACA91CE8AED9003F5E16 /* SourceCodePro-Light.otf */; };
+		E797ACAD1CE8AED9003F5E16 /* SourceCodePro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E797ACAA1CE8AED9003F5E16 /* SourceCodePro-Medium.otf */; };
+		E797ACAE1CE8AED9003F5E16 /* SourceCodePro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E797ACAB1CE8AED9003F5E16 /* SourceCodePro-Regular.otf */; };
+		E797ACB51CE8B2A8003F5E16 /* TopStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB01CE8B2A8003F5E16 /* TopStoryTableViewCell.swift */; };
+		E797ACB61CE8B2A8003F5E16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB11CE8B2A8003F5E16 /* ViewController.swift */; };
+		E797ACB71CE8B2A8003F5E16 /* AllExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */; };
+		E797ACB81CE8B2A8003F5E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +47,6 @@
 		8B7D0A392AD9303105CEAAA2 /* Pods_HackerNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3AB43AB93FE098C3047614 /* Pods-HackerNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerNews/Pods-HackerNews.debug.xcconfig"; sourceTree = "<group>"; };
 		E715E86E1CE799EF009356D1 /* HackerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E715E8711CE799EF009356D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E715E8731CE799EF009356D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E715E8761CE799EF009356D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E715E8791CE799EF009356D1 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
 		E715E87B1CE799EF009356D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,9 +58,15 @@
 		E715E8901CE799EF009356D1 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsUITests.swift; sourceTree = "<group>"; };
 		E715E8961CE799EF009356D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoryTableViewCell.swift; sourceTree = "<group>"; };
 		E797ACA21CE8A60F003F5E16 /* FontConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConstant.swift; sourceTree = "<group>"; };
 		E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		E797ACA91CE8AED9003F5E16 /* SourceCodePro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Light.otf"; sourceTree = "<group>"; };
+		E797ACAA1CE8AED9003F5E16 /* SourceCodePro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.otf"; sourceTree = "<group>"; };
+		E797ACAB1CE8AED9003F5E16 /* SourceCodePro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.otf"; sourceTree = "<group>"; };
+		E797ACB01CE8B2A8003F5E16 /* TopStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoryTableViewCell.swift; sourceTree = "<group>"; };
+		E797ACB11CE8B2A8003F5E16 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllExtensions.swift; sourceTree = "<group>"; };
+		E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,15 +137,15 @@
 		E715E8701CE799EF009356D1 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				E797ACAF1CE8B2A8003F5E16 /* Controllers */,
+				E797ACB21CE8B2A8003F5E16 /* App */,
+				E797ACA81CE8AED9003F5E16 /* Fonts */,
 				E797ACA11CE8A58D003F5E16 /* Constants */,
-				E715E8711CE799EF009356D1 /* AppDelegate.swift */,
-				E715E8731CE799EF009356D1 /* ViewController.swift */,
 				E715E8751CE799EF009356D1 /* Main.storyboard */,
 				E715E87B1CE799EF009356D1 /* Assets.xcassets */,
 				E715E87D1CE799EF009356D1 /* LaunchScreen.storyboard */,
 				E715E8801CE799EF009356D1 /* Info.plist */,
 				E715E8781CE799EF009356D1 /* HackerNews.xcdatamodeld */,
-				E797AC9E1CE84999003F5E16 /* TopStoryTableViewCell.swift */,
 			);
 			path = HackerNews;
 			sourceTree = "<group>";
@@ -167,6 +175,34 @@
 				E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E797ACA81CE8AED9003F5E16 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E797ACA91CE8AED9003F5E16 /* SourceCodePro-Light.otf */,
+				E797ACAA1CE8AED9003F5E16 /* SourceCodePro-Medium.otf */,
+				E797ACAB1CE8AED9003F5E16 /* SourceCodePro-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E797ACAF1CE8B2A8003F5E16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E797ACB01CE8B2A8003F5E16 /* TopStoryTableViewCell.swift */,
+				E797ACB11CE8B2A8003F5E16 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E797ACB21CE8B2A8003F5E16 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */,
+				E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +312,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E797ACAC1CE8AED9003F5E16 /* SourceCodePro-Light.otf in Resources */,
 				E715E87F1CE799EF009356D1 /* LaunchScreen.storyboard in Resources */,
 				E715E87C1CE799EF009356D1 /* Assets.xcassets in Resources */,
+				E797ACAD1CE8AED9003F5E16 /* SourceCodePro-Medium.otf in Resources */,
+				E797ACAE1CE8AED9003F5E16 /* SourceCodePro-Regular.otf in Resources */,
 				E715E8771CE799EF009356D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,10 +390,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E715E8741CE799EF009356D1 /* ViewController.swift in Sources */,
-				E797AC9F1CE84999003F5E16 /* TopStoryTableViewCell.swift in Sources */,
+				E797ACB61CE8B2A8003F5E16 /* ViewController.swift in Sources */,
 				E715E87A1CE799EF009356D1 /* HackerNews.xcdatamodeld in Sources */,
-				E715E8721CE799EF009356D1 /* AppDelegate.swift in Sources */,
+				E797ACB51CE8B2A8003F5E16 /* TopStoryTableViewCell.swift in Sources */,
+				E797ACB71CE8B2A8003F5E16 /* AllExtensions.swift in Sources */,
+				E797ACB81CE8B2A8003F5E16 /* AppDelegate.swift in Sources */,
 				E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */,
 				E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */,
 			);
