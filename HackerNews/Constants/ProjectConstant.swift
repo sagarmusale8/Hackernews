@@ -10,6 +10,6 @@ import UIKit
 
 class ProjectConstant: NSObject {
 
-    static let BASE_SERVER_URL = ""
+    static let BASE_SERVER_URL = "https://hacker-news.firebaseio.com/v0/"
     
 }

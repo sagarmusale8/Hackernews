@@ -26,11 +26,25 @@ class NetworkManager: NSObject {
     }
     
     // Making request 
-    func makeRequestWithRequestType(additionalURL: String, requestType: String, withParameters parameters: NSMutableDictionary, withCompletionBlock completion: (success: Bool, response: AnyObject?, error: NSError?)->Void){
+    func makeRequestWithRequestType(additionalURL: String, requestType: String, withParameters parameters: NSMutableDictionary, withCompletion completion: (success: Bool, response: AnyObject?, error: NSError?)->Void){
         if let methodType = Alamofire.Method.init(rawValue: requestType){
             let requestUrl = ProjectConstant.BASE_SERVER_URL + additionalURL
             
-            Alamofire.request(methodType, requestUrl, parameters: parameters as? [String: AnyObject], encoding: .JSON, headers: nil)
+            Alamofire.request(
+                methodType,
+                requestUrl,
+                parameters: NSDictionary(dictionary: parameters) as? [String : AnyObject],
+                encoding: .URL)
+                .validate()
+                .responseJSON { (response) -> Void in
+                    guard response.result.isSuccess else {
+                        print("Error while fetching remote rooms: \(response.result.error)")
+                        completion(success: response.result.isSuccess, response: response.result.value, error: response.result.error)
+                        return
+                    }
+
+                    completion(success: response.result.isSuccess, response: response.result.value, error: response.result.error)
+            }
         }
     }
 }

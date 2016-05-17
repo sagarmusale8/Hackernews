@@ -14,11 +14,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let numberOfSectionForTopStories = 1
     let defaultNumberOfRows = 0
+    var allTopStoriesIds: NSMutableArray!
+    var topStoriesNews = NSMutableArray()
     let reusbaleIdForTopStoryCell = String(TopStoryTableViewCell)
+    // Paging vars
+    let pageCount = 25
+    var pageNumber = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
+        getTopStoriesData()
+    }
+    
+    // Getting top stories items
+    func getTopStoriesData() {
+        NetworkManager().makeRequestWithRequestType("topstories.json", requestType: "GET", withParameters: NSMutableDictionary()) { (success, response, error) in
+            if let responseArr = response as? NSMutableArray where success{
+                self.allTopStoriesIds = responseArr
+            }
+        }
     }
     
     // MARK: TableView DataSource and Delegate Methods
@@ -28,14 +43,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-        return defaultNumberOfRows
+        return topStoriesNews.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier(reusbaleIdForTopStoryCell) as? TopStoryTableViewCell{
-            
+
             cell.setupUIProperties()
             
             return cell
