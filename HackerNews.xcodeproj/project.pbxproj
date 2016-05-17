@@ -14,6 +14,7 @@
 		E715E87F1CE799EF009356D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E715E87D1CE799EF009356D1 /* LaunchScreen.storyboard */; };
 		E715E88A1CE799EF009356D1 /* HackerNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8891CE799EF009356D1 /* HackerNewsTests.swift */; };
 		E715E8951CE799EF009356D1 /* HackerNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */; };
+		E79049F61CE96FF9004806FD /* ProjectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79049F51CE96FF9004806FD /* ProjectConstant.swift */; };
 		E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA21CE8A60F003F5E16 /* FontConstant.swift */; };
 		E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */; };
 		E797ACAC1CE8AED9003F5E16 /* SourceCodePro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E797ACA91CE8AED9003F5E16 /* SourceCodePro-Light.otf */; };
@@ -23,6 +24,7 @@
 		E797ACB61CE8B2A8003F5E16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB11CE8B2A8003F5E16 /* ViewController.swift */; };
 		E797ACB71CE8B2A8003F5E16 /* AllExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */; };
 		E797ACB81CE8B2A8003F5E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */; };
+		E797ACBA1CE8B5C1003F5E16 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797ACB91CE8B5C1003F5E16 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		E715E8901CE799EF009356D1 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E715E8941CE799EF009356D1 /* HackerNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsUITests.swift; sourceTree = "<group>"; };
 		E715E8961CE799EF009356D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E79049F51CE96FF9004806FD /* ProjectConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConstant.swift; sourceTree = "<group>"; };
 		E797ACA21CE8A60F003F5E16 /* FontConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConstant.swift; sourceTree = "<group>"; };
 		E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		E797ACA91CE8AED9003F5E16 /* SourceCodePro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Light.otf"; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		E797ACB11CE8B2A8003F5E16 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllExtensions.swift; sourceTree = "<group>"; };
 		E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E797ACB91CE8B5C1003F5E16 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 			children = (
 				E797ACA21CE8A60F003F5E16 /* FontConstant.swift */,
 				E797ACA41CE8A68A003F5E16 /* ColorConstant.swift */,
+				E79049F51CE96FF9004806FD /* ProjectConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				E797ACB31CE8B2A8003F5E16 /* AllExtensions.swift */,
 				E797ACB41CE8B2A8003F5E16 /* AppDelegate.swift */,
+				E797ACB91CE8B5C1003F5E16 /* NetworkManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -391,9 +397,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E797ACB61CE8B2A8003F5E16 /* ViewController.swift in Sources */,
+				E79049F61CE96FF9004806FD /* ProjectConstant.swift in Sources */,
 				E715E87A1CE799EF009356D1 /* HackerNews.xcdatamodeld in Sources */,
 				E797ACB51CE8B2A8003F5E16 /* TopStoryTableViewCell.swift in Sources */,
 				E797ACB71CE8B2A8003F5E16 /* AllExtensions.swift in Sources */,
+				E797ACBA1CE8B5C1003F5E16 /* NetworkManager.swift in Sources */,
 				E797ACB81CE8B2A8003F5E16 /* AppDelegate.swift in Sources */,
 				E797ACA31CE8A60F003F5E16 /* FontConstant.swift in Sources */,
 				E797ACA51CE8A68A003F5E16 /* ColorConstant.swift in Sources */,
