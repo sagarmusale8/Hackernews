@@ -28,7 +28,7 @@ class NetworkManager: NSObject {
     // Making request 
     func makeRequestWithRequestType(additionalURL: String, requestType: String, withParameters parameters: NSMutableDictionary, withCompletion completion: (success: Bool, response: AnyObject?, error: NSError?)->Void){
         if let methodType = Alamofire.Method.init(rawValue: requestType){
-            let requestUrl = ProjectConstant.BASE_SERVER_URL + additionalURL
+            let requestUrl = ProjectConstant.URL_BASE_SERVER + additionalURL
             
             Alamofire.request(
                 methodType,

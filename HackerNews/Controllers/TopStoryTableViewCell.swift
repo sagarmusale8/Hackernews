@@ -11,8 +11,7 @@ import UIKit
 class TopStoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblHeading: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
-    @IBOutlet weak var btnUrl: UIButton!
+    @IBOutlet weak var lblUrl: UILabel!
     @IBOutlet weak var lblTimeString: UILabel!
     @IBOutlet weak var lblScore: UILabel!
     
@@ -30,10 +29,10 @@ class TopStoryTableViewCell: UITableViewCell {
     // MARK: Setting up UI Components
     func setupUIProperties(){
         lblHeading.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_15)
-        lblDescription.setProperties(ColorConstant.SUBTITLE_GRAY, textFont: FontConstant.REGULAR_13)
         lblTimeString.setProperties(ColorConstant.SUBTITLE_GRAY, textFont: FontConstant.REGULAR_13)
         lblScore.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_13)
-        btnUrl.setProperties(ColorConstant.URL, textFont: FontConstant.REGULAR_13)
+        lblUrl.setProperties(ColorConstant.URL, textFont: FontConstant.REGULAR_13)
+        self.selectionStyle = .None
     }
 
 }

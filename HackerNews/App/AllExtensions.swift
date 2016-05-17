@@ -47,3 +47,15 @@ extension UIColor{
         return UIColor.init(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
     }
 }
+
+extension NSDate{
+    
+    // Getting Readable String from unixTime
+    class func stringFromUnixTime(unixTime: NSNumber)->String{
+        let date = NSDate(timeIntervalSince1970: unixTime.doubleValue)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yy HH:mm"
+        return dateFormatter.stringFromDate(date)
+    }
+}

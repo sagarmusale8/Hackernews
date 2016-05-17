@@ -10,6 +10,11 @@ import UIKit
 
 class ProjectConstant: NSObject {
 
-    static let BASE_SERVER_URL = "https://hacker-news.firebaseio.com/v0/"
+    // MARK: Strings
+    static let STR_ITEM_ID = "ITEM_ID"
     
+    // MARK: All URLs
+    static let URL_BASE_SERVER = "https://hacker-news.firebaseio.com/v0/"
+    static let URL_TOP_STORIES = "topstories.json"
+    static let URL_NEWS_DETAILS = "item/ITEM_ID.json"
 }
