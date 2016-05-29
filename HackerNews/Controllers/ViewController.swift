@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var allTopStoriesIds: NSMutableArray!
     var topStoriesNews = NSMutableArray()
     let reusbaleIdForTopStoryCell = String(TopStoryTableViewCell)
+    let pageCount = 25
     static var count = 0
     
     override func viewDidLoad() {
@@ -27,16 +28,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: Getting top stories items
     func getTopStoriesData() {
-        let newsItems = NewsDataHandler.getAllNews()
-        if newsItems?.count > 0{
-            self.topStoriesNews.addObjectsFromArray(newsItems!)
-            self.tableViewTopStories.reloadData()
-        }
+        loadDataFromCoreData()
         NetworkManager().makeRequestWithRequestType(ProjectConstant.URL_TOP_STORIES, requestType: "GET", withParameters: NSMutableDictionary()) { (success, response, error) in
             if let responseArr = response as? NSMutableArray where success{
                 self.allTopStoriesIds = responseArr
                 self.fetchNewsDataForPage()
             }
+        }
+    }
+    
+    // MARK: Loading data from CoreData
+    func loadDataFromCoreData(){
+        self.topStoriesNews.removeAllObjects()
+        let newsItems = NewsDataHandler.getAllNews()
+        if newsItems?.count > 0{
+            self.topStoriesNews.addObjectsFromArray(newsItems!)
+            self.tableViewTopStories.reloadData()
         }
     }
     
@@ -56,8 +63,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             }
                         }
                         ViewController.count -= 1
-                        if ViewController.count == 0{
-                            self.tableViewTopStories.reloadData()
+                        // Loading data if 25 or all items fetchedytrert
+                        if (ViewController.count == 0) || (self.topStoriesNews.count % 25 == 0){
+                            self.loadDataFromCoreData()
                         }
                     })
                 }
@@ -96,13 +104,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     cell.lblHeading.text = title
                 }
                 if let score = news.score{
-                    cell.lblScore.text = String(score)
+                    cell.btnScore.setTitle(String(score), forState: .Normal)
                 }
                 if let time = news.time{
                     cell.lblTimeString.text = NSDate.stringFromUnixTime(time)
                 }
-                if let urlStr = news.url{
-                    cell.lblUrl.text = urlStr
+                if let writer = news.by{
+                    cell.lblBy.text = "by " + writer
                 }
             }
             
@@ -114,6 +122,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "show_details", let destination = segue.destinationViewController as? NewsDetailsViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableViewTopStories.indexPathForCell(cell) {
+                if let newsItem = topStoriesNews[indexPath.row] as? News{
+                    destination.newsItem = newsItem
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

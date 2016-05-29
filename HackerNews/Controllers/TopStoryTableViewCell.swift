@@ -11,9 +11,9 @@ import UIKit
 class TopStoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblHeading: UILabel!
-    @IBOutlet weak var lblUrl: UILabel!
+    @IBOutlet weak var lblBy: UILabel!
     @IBOutlet weak var lblTimeString: UILabel!
-    @IBOutlet weak var lblScore: UILabel!
+    @IBOutlet weak var btnScore: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +30,9 @@ class TopStoryTableViewCell: UITableViewCell {
     func setupUIProperties(){
         lblHeading.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_15)
         lblTimeString.setProperties(ColorConstant.SUBTITLE_GRAY, textFont: FontConstant.REGULAR_13)
-        lblScore.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_13)
-        lblUrl.setProperties(ColorConstant.URL, textFont: FontConstant.REGULAR_13)
+        btnScore.setProperties(ColorConstant.HEADER, textFont: FontConstant.REGULAR_13)
+        btnScore.makeRoundCorner(3.0, borderColor: ColorConstant.SCORE_BORDER, borderWidth: 1.0)
+        lblBy.setProperties(ColorConstant.URL, textFont: FontConstant.REGULAR_13)
         self.selectionStyle = .None
     }
 

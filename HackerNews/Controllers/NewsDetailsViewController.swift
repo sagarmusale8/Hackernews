@@ -12,10 +12,31 @@ class NewsDetailsViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
     
+    var barBtnItem : UIBarButtonItem?
+    var newsItem: News?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupNavigationController()
+        loadNewsUrl()
+    }
+    
+    // Showing navigation bar title
+    func setupNavigationController(){
+        var titleStr = "Details"
+        if let title = newsItem?.title{
+            titleStr = title
+        }
+        self.title = titleStr
+    }
+    
+    // Loading url for newsItem
+    func loadNewsUrl(){
+        if let url = newsItem?.url{
+            let request = NSURLRequest(URL: NSURL(string: url)!)
+            webView.loadRequest(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -59,3 +59,13 @@ extension NSDate{
         return dateFormatter.stringFromDate(date)
     }
 }
+
+extension UIView{
+    
+    // Making view rounded corner
+    func makeRoundCorner(cornerRadius: CGFloat, borderColor: UIColor, borderWidth: CGFloat){
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor.CGColor
+    }
+}
