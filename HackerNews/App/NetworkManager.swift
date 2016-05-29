@@ -42,7 +42,7 @@ class NetworkManager: NSObject {
                         completion(success: response.result.isSuccess, response: response.result.value, error: response.result.error)
                         return
                     }
-
+                    print("Got response with descp: \(response.result.value)")
                     completion(success: response.result.isSuccess, response: response.result.value, error: response.result.error)
             }
         }

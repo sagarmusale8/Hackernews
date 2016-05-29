@@ -17,9 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var allTopStoriesIds: NSMutableArray!
     var topStoriesNews = NSMutableArray()
     let reusbaleIdForTopStoryCell = String(TopStoryTableViewCell)
-    // Paging vars
-    let pageCount = 25
-    var pageNumber = 1
+    static var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: Getting top stories items
     func getTopStoriesData() {
+        let newsItems = NewsDataHandler.getAllNews()
+        if newsItems?.count > 0{
+            self.topStoriesNews.addObjectsFromArray(newsItems!)
+            self.tableViewTopStories.reloadData()
+        }
         NetworkManager().makeRequestWithRequestType(ProjectConstant.URL_TOP_STORIES, requestType: "GET", withParameters: NSMutableDictionary()) { (success, response, error) in
             if let responseArr = response as? NSMutableArray where success{
                 self.allTopStoriesIds = responseArr
@@ -39,22 +42,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: Fetching news for page items
     func fetchNewsDataForPage() {
-        let finalCount = pageNumber * pageCount
-        let startCount = finalCount - pageCount
-        
-        for index in startCount...finalCount-1{
-            if let itemId = allTopStoriesIds.objectAtIndex(index) as? Int{
-                let urlStr = ProjectConstant.URL_NEWS_DETAILS.stringByReplacingOccurrencesOfString(ProjectConstant.STR_ITEM_ID, withString: String(itemId))
-                NetworkManager().makeRequestWithRequestType(urlStr, requestType: "GET", withParameters: NSMutableDictionary(), withCompletion: { (success, response, error) in
-                    if let responseVal = response as? NSDictionary where success{
-                        let newsItem = News()
-                        newsItem.setValuesForKeysWithDictionary(responseVal as! [String : AnyObject])
-                        self.topStoriesNews.addObject(newsItem)
-                    }
-                    self.tableViewTopStories.reloadData()
-                 })
+        let allIds = getAllIdsForStories()
+        for index in 0...allTopStoriesIds.count-1{
+            if let itemId = allTopStoriesIds.objectAtIndex(index) as? Int {
+                // Fetching data if only it is not saved
+                if !allIds.containsObject(itemId){
+                    let urlStr = ProjectConstant.URL_NEWS_DETAILS.stringByReplacingOccurrencesOfString(ProjectConstant.STR_ITEM_ID, withString: String(itemId))
+                    ViewController.count += 1
+                    NetworkManager().makeRequestWithRequestType(urlStr, requestType: "GET", withParameters: NSMutableDictionary(), withCompletion: { (success, response, error) in
+                        if let responseVal = response as? NSDictionary where success{
+                            if let newsItem = NewsDataHandler.saveNewsObject(responseVal){
+                                self.topStoriesNews.addObject(newsItem)
+                            }
+                        }
+                        ViewController.count -= 1
+                        if ViewController.count == 0{
+                            self.tableViewTopStories.reloadData()
+                        }
+                    })
+                }
             }
         }
+    }
+    
+    // Getting all ids
+    func getAllIdsForStories()->NSArray{
+        let allIds = NSMutableArray()
+        for newsItem in topStoriesNews{
+            if let thisNews = newsItem as? News{
+                allIds.addObject(thisNews.id!)
+            }
+        }
+        
+        return allIds
     }
     
     // MARK: TableView DataSource and Delegate Methods
@@ -72,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let cell = tableView.dequeueReusableCellWithIdentifier(reusbaleIdForTopStoryCell) as? TopStoryTableViewCell{
             cell.setupUIProperties()
             if let news = topStoriesNews.objectAtIndex(indexPath.row) as? News{
-                if let title = news.title as? String{
+                if let title = news.title{
                     cell.lblHeading.text = title
                 }
                 if let score = news.score{
@@ -81,7 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let time = news.time{
                     cell.lblTimeString.text = NSDate.stringFromUnixTime(time)
                 }
-                if let urlStr = news.url as? String{
+                if let urlStr = news.url{
                     cell.lblUrl.text = urlStr
                 }
             }

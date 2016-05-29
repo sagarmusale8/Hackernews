@@ -9,6 +9,8 @@
 import UIKit
 
 class ProjectConstant: NSObject {
+    
+    //static let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
 
     // MARK: Strings
     static let STR_ITEM_ID = "ITEM_ID"
