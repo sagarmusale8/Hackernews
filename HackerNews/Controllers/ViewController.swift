@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let numberOfSectionForTopStories = 1
     let defaultNumberOfRows = 0
-    var allTopStoriesIds: NSMutableArray!
+    var allTopStoriesIds = NSMutableArray()
     var topStoriesNews = NSMutableArray()
     let reusbaleIdForTopStoryCell = String(TopStoryTableViewCell)
     let pageCount = 25
@@ -26,12 +26,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getTopStoriesData()
     }
     
+    @IBAction func actionOnRefresh(sender: AnyObject) {
+        self.getTopStoriesData()
+    }
+    
     // MARK: Getting top stories items
     func getTopStoriesData() {
         loadDataFromCoreData()
+        allTopStoriesIds.removeAllObjects()
         NetworkManager().makeRequestWithRequestType(ProjectConstant.URL_TOP_STORIES, requestType: ProjectConstant.REQUEST_GET, withParameters: NSMutableDictionary()) { (success, response, error) in
             if let responseArr = response as? NSMutableArray where success{
-                self.allTopStoriesIds = responseArr
+                self.allTopStoriesIds.addObjectsFromArray(responseArr as [AnyObject])
                 self.fetchNewsDataForPage()
             }
         }

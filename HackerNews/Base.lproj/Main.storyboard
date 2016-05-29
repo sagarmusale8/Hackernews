@@ -95,7 +95,13 @@
                             <constraint firstAttribute="trailing" secondItem="o3k-xa-nml" secondAttribute="trailing" id="vn8-0U-RM0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Stories" id="enl-3M-1TH"/>
+                    <navigationItem key="navigationItem" title="Top Stories" id="enl-3M-1TH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="Eoi-Q8-sZO">
+                            <connections>
+                                <action selector="actionOnRefresh:" destination="BYZ-38-t0r" id="fLh-Ry-MLa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableViewTopStories" destination="o3k-xa-nml" id="ALg-Al-OIf"/>
