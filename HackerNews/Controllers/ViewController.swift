@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: Getting top stories items
     func getTopStoriesData() {
         loadDataFromCoreData()
-        NetworkManager().makeRequestWithRequestType(ProjectConstant.URL_TOP_STORIES, requestType: "GET", withParameters: NSMutableDictionary()) { (success, response, error) in
+        NetworkManager().makeRequestWithRequestType(ProjectConstant.URL_TOP_STORIES, requestType: ProjectConstant.REQUEST_GET, withParameters: NSMutableDictionary()) { (success, response, error) in
             if let responseArr = response as? NSMutableArray where success{
                 self.allTopStoriesIds = responseArr
                 self.fetchNewsDataForPage()
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if !allIds.containsObject(itemId){
                     let urlStr = ProjectConstant.URL_NEWS_DETAILS.stringByReplacingOccurrencesOfString(ProjectConstant.STR_ITEM_ID, withString: String(itemId))
                     ViewController.count += 1
-                    NetworkManager().makeRequestWithRequestType(urlStr, requestType: "GET", withParameters: NSMutableDictionary(), withCompletion: { (success, response, error) in
+                    NetworkManager().makeRequestWithRequestType(urlStr, requestType: ProjectConstant.REQUEST_GET, withParameters: NSMutableDictionary(), withCompletion: { (success, response, error) in
                         if let responseVal = response as? NSDictionary where success{
                             if let newsItem = NewsDataHandler.saveNewsObject(responseVal){
                                 self.topStoriesNews.addObject(newsItem)
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "show_details", let destination = segue.destinationViewController as? NewsDetailsViewController {
+        if segue.identifier == ProjectConstant.SEGUE_NEWS_DETAILS, let destination = segue.destinationViewController as? NewsDetailsViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableViewTopStories.indexPathForCell(cell) {
                 if let newsItem = topStoriesNews[indexPath.row] as? News{
                     destination.newsItem = newsItem
