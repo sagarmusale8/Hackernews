@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         }
                         ViewController.count -= 1
                         // Loading data if 25 or all items fetchedytrert
-                        if (ViewController.count == 0) || (self.topStoriesNews.count % 25 == 0){
+                        if (ViewController.count == 0) || (self.topStoriesNews.count % self.pageCount == 0){
                             self.loadDataFromCoreData()
                         }
                     })
